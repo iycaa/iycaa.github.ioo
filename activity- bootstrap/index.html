@@ -41,13 +41,13 @@
       width: 26px;
       left: 2px;
       bottom: 2px;
-      background-color: white;
+      background-color: rgb(0, 0, 0);
       transition: .4s;
       border-radius: 50%;
     }
 
     input:checked + .slider {
-      background-color: #2196F3;
+        background-color: #ffffff;
     }
 
     input:checked + .slider:before {
@@ -56,7 +56,6 @@
 
     /* Icon inside the toggle button */
     .slider:after {
-      content: '🌙';
       position: absolute;
       top: 50%;
       left: 8px;
@@ -65,87 +64,99 @@
     }
 
     input:checked + .slider:after {
-      content: '☀️';
+
       left: auto;
       right: 8px;
     }
+    #about {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/BANNER.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
   </style>
 </head>
 
 <body data-bs-theme="light" id="body">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow" style="position: fixed; top: 0; width: 100%; z-index: 1000">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Explore Madrid</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About Madrid</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#gallery">Gallery</a>
-          </li>
-        </ul>
-
-        <!-- Toggle switch for Dark Mode / Light Mode -->
-        <label class="toggle-btn">
-          <input type="checkbox" id="btnColor" onclick="changeColorMode()">
-          <span class="slider"></span>
-        </label>
-
-      </div>
-    </div>
-  </nav>
-
-  <!-- About Madrid Section -->
-  <div class="container-fluid bg-light mt-5 pt-5" id="about" style="padding: 50px 0;">
-    <div class="container">
-      <h1 class="display-3 text-center">Discover Madrid</h1>
-      <p class="lead text-center">Madrid, the vibrant capital of Spain, is known for its world-class museums, historic landmarks, bustling plazas, and rich culture. It's a city where old meets new, offering a perfect blend of tradition and modernity.</p>
-    </div>
-  </div>
-
-  <!-- Gallery and Featured Places Section -->
-  <div class="container-fluid bg-white" id="gallery" style="padding: 50px 0;">
-    <div class="container">
-      <h1 class="display-4 text-center">Beauty of Madrid</h1>
-      <div class="row justify-content-center my-5">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card m-3 shadow">
-            <img src="https://cdn.pixabay.com/photo/2015/09/16/21/07/madrid-946029_1280.jpg" class="card-img-top" alt="Madrid Plaza Mayor">
-            <div class="card-body">
-              <h5 class="card-title">Plaza Mayor</h5>
-              <p class="card-text">One of Madrid's most iconic squares, Plaza Mayor is surrounded by historical buildings and vibrant cafés. A must-visit for those looking to experience the heart of the city.</p>
-            </div>
+    <nav class="navbar navbar-expand-lg shadow fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Explore Madrid</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-center w-100">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#map">Map</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#user-content">Share Your Moment</a>
+              </li>
+            </ul>
+    
+            <!-- Toggle switch for Dark Mode / Light Mode -->
+            <label class="toggle-btn ms-2">
+              <input type="checkbox" id="btnColor" onclick="changeColorMode()">
+              <span class="slider"></span>
+            </label>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card m-3 shadow">
-            <img src="https://cdn.pixabay.com/photo/2021/01/29/13/49/royal-palace-5960694_1280.jpg" class="card-img-top" alt="Royal Palace of Madrid">
-            <div class="card-body">
-              <h5 class="card-title">Royal Palace</h5>
-              <p class="card-text">A symbol of Madrid's regal past, the Royal Palace is the largest functioning royal palace in Europe. Its architecture and expansive gardens are stunning examples of European heritage.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card m-3 shadow">
-            <img src="https://cdn.pixabay.com/photo/2016/10/29/19/16/madrid-1780819_1280.jpg" class="card-img-top" alt="Retiro Park">
-            <div class="card-body">
-              <h5 class="card-title">Retiro Park</h5>
-              <p class="card-text">An oasis of peace in the middle of Madrid, Retiro Park is perfect for a relaxing day out. With beautiful sculptures, a lake, and vast green spaces, it's a favorite among both locals and tourists.</p>
-            </div>
-          </div>
+      </nav>
+    
+      <!-- About Madrid Section -->
+      <div class="container-fluid mt-5 pt-5" id="about">
+        <div class="container">
+          <h1 class="display-3 text-center text-white">Madrid , Spain</h1>
+          <p class="lead text-center text-white">The capital city with a thousand options</p>
         </div>
       </div>
-    </div>
-  </div>
+    
+      <!-- Gallery and Featured Places Section -->
+      <div class="container-fluid bg-white" id="gallery" style="padding: 50px 0;">
+        <div class="container">
+          <h1 class="display-4 text-center">Beauty of Madrid</h1>
+          <div class="row justify-content-center my-5">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card m-3 shadow">
+                <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/PLAZAMAYOR.jpg" class="card-img-top" alt="Madrid Plaza Mayor">
+                <div class="card-body">
+                  <h5 class="card-title">Plaza Mayor</h5>
+                  <p class="card-text">One of Madrid's most iconic squares, Plaza Mayor is surrounded by historical buildings and vibrant cafés. A must-visit for those looking to experience the heart of the city.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card m-3 shadow">
+                <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/ROYALPALACE.jpg" class="card-img-top" alt="Royal Palace of Madrid">
+                <div class="card-body">
+                  <h5 class="card-title">Royal Palace</h5>
+                  <p class="card-text">A symbol of Madrid's regal past, the Royal Palace is the largest functioning royal palace in Europe. Its architecture and expansive gardens are stunning examples of European heritage.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card m-3 shadow">
+                <img src="https://cdn.pixabay.com/photo/2016/10/29/19/16/madrid-1780819_1280.jpg" class="card-img-top" alt="Retiro Park">
+                <div class="card-body">
+                  <h5 class="card-title">Retiro Park</h5>
+                  <p class="card-text">An oasis of peace in the middle of Madrid, Retiro Park is perfect for a relaxing day out. With beautiful sculptures, a lake, and vast green spaces, it's a favorite among both locals and tourists.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
   <!-- Footer Section -->
   <div class="container-fluid bg-dark text-white" style="padding: 50px 0;">
