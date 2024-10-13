@@ -78,6 +78,26 @@
         background-position: center;
         background-repeat: no-repeat;
       }
+ /* Navbar Styles */
+    .navbar {
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      z-index: 10; /* Ensure navbar is above other elements */
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(255, 255, 255, 0.9); /* Solid color when scrolled in light mode */
+    }
+
+    /* Dark mode styles for the navbar */
+    body[data-bs-theme="dark"] .navbar.scrolled {
+      background-color: rgba(36, 36, 36, 0.9); /* Dark background when scrolled in dark mode */
+    }
+
+    /* Dark mode navbar */
+    body[data-bs-theme="dark"] .navbar {
+      background-color: rgba(36, 36, 36, 0.9); /* Dark background when in dark mode */
+    }
   </style>
 </head>
 
@@ -177,6 +197,15 @@
         colorMode = "light";
       }
     }
+// Change navbar background on scroll
+    window.onscroll = function() {
+      var navbar = document.querySelector('.navbar');
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
