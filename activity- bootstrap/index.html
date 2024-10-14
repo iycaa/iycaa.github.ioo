@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Explore Spain: Madrid</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     /* Toggle button switch design */
     .toggle-btn {
@@ -47,143 +48,126 @@
     }
 
     input:checked + .slider {
-        background-color: #ffffff;
+      background-color: #ffffff;
     }
 
     input:checked + .slider:before {
       transform: translateX(30px);
     }
 
-    /* Icon inside the toggle button */
-    .slider:after {
-      position: absolute;
-      top: 50%;
-      left: 8px;
-      transform: translateY(-50%);
-      font-size: 14px;
-    }
-
-    input:checked + .slider:after {
-
-      left: auto;
-      right: 8px;
-    }
     #about {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/BANNER.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
- /* Navbar Styles */
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/BANNER.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Navbar Styles */
     .navbar {
       background-color: transparent;
       transition: background-color 0.3s ease;
-      z-index: 10; /* Ensure navbar is above other elements */
+      z-index: 10;
     }
 
     .navbar.scrolled {
-      background-color: rgba(255, 255, 255, 0.9); /* Solid color when scrolled in light mode */
+      background-color: rgba(255, 255, 255, 0.9);
     }
 
     /* Dark mode styles for the navbar */
     body[data-bs-theme="dark"] .navbar.scrolled {
-      background-color: rgba(36, 36, 36, 0.9); /* Dark background when scrolled in dark mode */
-    }
-
-    /* Dark mode navbar */
-    body[data-bs-theme="dark"] .navbar {
-        background-color: transparent; /* Dark background when in dark mode */
+      background-color: rgba(36, 36, 36, 0.9);
     }
   </style>
 </head>
 
 <body data-bs-theme="light" id="body">
-    <nav class="navbar navbar-expand-lg  fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Explore Madrid</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-center w-100">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#gallery">Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#map">Map</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#user-content">Share Your Moment</a>
-              </li>
-            </ul>
-    
-            <!-- Toggle switch for Dark Mode / Light Mode -->
-            <label class="toggle-btn ms-2">
-              <input type="checkbox" id="btnColor" onclick="changeColorMode()">
-              <span class="slider"></span>
-            </label>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Explore Madrid</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-center w-100">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#map">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#user-content">Share Your Moment</a>
+          </li>
+        </ul>
+        <label class="toggle-btn ms-2">
+          <input type="checkbox" id="btnColor" onclick="changeColorMode()">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <div class="container-fluid " id="about">
+    <div class="container">
+      <h1 class="display-3 text-center text-white">Madrid, Spain</h1>
+      <p class="lead text-center text-white">The capital city with a thousand options</p>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="container-fluid bg-white" id="gallery" style="padding: 50px 0;">
+    <div class="container">
+      <h1 class="display-4 text-center">Beauty of Madrid</h1>
+      <div class="row justify-content-center my-5">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card m-3 shadow">
+            <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/PLAZAMAYOR.jpg" class="card-img-top" alt="Madrid Plaza Mayor">
+            <div class="card-body">
+              <h5 class="card-title">Plaza Mayor</h5>
+              <p class="card-text">One of Madrid's most iconic squares.</p>
+            </div>
           </div>
         </div>
-      </nav>
-    
-      <!-- About Madrid Section -->
-      <div class="container-fluid " id="about">
-        <div class="container">
-          <h1 class="display-3 text-center text-white">Madrid , Spain</h1>
-          <p class="lead text-center text-white">The capital city with a thousand options</p>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card m-3 shadow">
+            <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/ROYALPALACE.jpg" class="card-img-top" alt="Royal Palace of Madrid">
+            <div class="card-body">
+              <h5 class="card-title">Royal Palace</h5>
+              <p class="card-text">A symbol of Madrid's regal past.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    
-      <!-- Gallery and Featured Places Section -->
-      <div class="container-fluid bg-white" id="gallery" style="padding: 50px 0;">
-        <div class="container">
-          <h1 class="display-4 text-center">Beauty of Madrid</h1>
-          <div class="row justify-content-center my-5">
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card m-3 shadow">
-                <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/PLAZAMAYOR.jpg" class="card-img-top" alt="Madrid Plaza Mayor">
-                <div class="card-body">
-                  <h5 class="card-title">Plaza Mayor</h5>
-                  <p class="card-text">One of Madrid's most iconic squares, Plaza Mayor is surrounded by historical buildings and vibrant cafés. A must-visit for those looking to experience the heart of the city.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card m-3 shadow">
-                <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/ROYALPALACE.jpg" class="card-img-top" alt="Royal Palace of Madrid">
-                <div class="card-body">
-                  <h5 class="card-title">Royal Palace</h5>
-                  <p class="card-text">A symbol of Madrid's regal past, the Royal Palace is the largest functioning royal palace in Europe. Its architecture and expansive gardens are stunning examples of European heritage.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card m-3 shadow">
-                <img src="https://cdn.pixabay.com/photo/2016/10/29/19/16/madrid-1780819_1280.jpg" class="card-img-top" alt="Retiro Park">
-                <div class="card-body">
-                  <h5 class="card-title">Retiro Park</h5>
-                  <p class="card-text">An oasis of peace in the middle of Madrid, Retiro Park is perfect for a relaxing day out. With beautiful sculptures, a lake, and vast green spaces, it's a favorite among both locals and tourists.</p>
-                </div>
-              </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card m-3 shadow">
+            <img src="https://cdn.pixabay.com/photo/2016/10/29/19/16/madrid-1780819_1280.jpg" class="card-img-top" alt="Retiro Park">
+            <div class="card-body">
+              <h5 class="card-title">Retiro Park</h5>
+              <p class="card-text">An oasis of peace in the middle of Madrid.</p>
             </div>
           </div>
         </div>
       </div>
-      <!-- Interactive Map Section -->
+    </div>
+  </div>
+
+  <!-- Map Section -->
   <div class="container text-center my-5" id="map">
     <h2>Explore Madrid's Attractions</h2>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24281.638111415654!2d-3.7037905595287175!3d40.41694753580314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42288b7c41d713%3A0x9fa569bbaa4a248a!2sPuerta%20del%20Sol!5e0!3m2!1sen!2sph!4v1697064323152!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
- <!-- User Content Section -->
- <div class="container-fluid bg-light" id="user-content" style="padding: 50px 0;">
+
+  <!-- Share Your Moment Section -->
+  <div class="container-fluid bg-light" id="user-content" style="padding: 50px 0;">
     <div class="container">
       <h2 class="text-center">Share Your Moments in Madrid!</h2>
       <form>
@@ -200,15 +184,15 @@
     </div>
   </div>
 
-
   <!-- Footer Section -->
   <div class="container-fluid bg-dark text-white" style="padding: 50px 0;">
     <div class="container text-center">
       <h3 class="display-6">Explore More of Spain</h3>
-      <p class="lead">Beyond Madrid, Spain offers endless destinations waiting to be discovered. From the sunny beaches of Costa del Sol to the rich history of Granada and Seville, every corner of Spain is filled with wonders.</p>
+      <p class="lead">Discover the wonders of Spain beyond Madrid.</p>
     </div>
   </div>
 
+  <!-- Scripts -->
   <script>
     var colorMode = "light";
     function changeColorMode() {
@@ -220,10 +204,11 @@
         colorMode = "light";
       }
     }
-// Change navbar background on scroll
+
+    // Change navbar background on scroll
     window.onscroll = function() {
       var navbar = document.querySelector('.navbar');
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      if (document.documentElement.scrollTop > 50) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
@@ -231,9 +216,7 @@
     };
   </script>
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-64+JIM82vU1mY9q4r9/BAT7iELPKXBT0AfP7jBb5U9N7KXlRm8+lO1ey9lgY/1dF"
-    crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
