@@ -53,36 +53,36 @@
       transform: translateX(30px);
     }
 
-   #about {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/BANNER.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative; /* Ensure the pseudo-element is positioned correctly */
-}
-
-/* Dark overlay effect */
-#about::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* 50% opacity for the dark effect */
-  z-index: 1;
-}
-
-#about .container {
-  position: relative;
-  z-index: 2; /* Make sure the text is above the dark overlay */
-  text-align: center;
-}
-
+    #about {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/BANNER.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative; /* Ensure the pseudo-element is positioned correctly */
+      }
+      
+      /* Dark overlay effect */
+      #about::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* 50% opacity for the dark effect */
+        z-index: 1;
+      }
+      
+      #about .container {
+        position: relative;
+        z-index: 2; /* Make sure the text is above the dark overlay */
+        text-align: center;
+      }
+      
 
     /* Navbar Styles */
     .navbar {
@@ -115,6 +115,31 @@
       background-color: #212529; /* Dark background */
       color: white; /* Light text */
     }
+    /* Make sure all cards are the same size */
+.card {
+    width: 100%; /* Adjust as needed for card width */
+    height: 350px; /* Fixed height for all cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Force images to cover the top area and crop if needed */
+  .card-img-top {
+    width: 100%;
+    height: 250px; /* Fixed height for images */
+    object-fit: cover; /* Crop the image to fit the space */
+    object-position: center; /* Center the image in case of cropping */
+  }
+  
+  /* Ensure card body takes the rest of the space */
+  .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
   </style>
 </head>
 
@@ -122,7 +147,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Explore Madrid</a>
+      <a class="navbar-brand" href="#">Explore Madrid </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -153,7 +178,7 @@
   <!-- About Section -->
   <div class="container-fluid " id="about">
     <div class="container">
-      <h1 class="display-3 text-center text-white">Madrid, Spain</h1>
+      <h1 class="display-3 text-center  text-white">Madrid, Spain</h1>
       <p class="lead text-center text-white">The capital city with a thousand options</p>
     </div>
   </div>
@@ -183,7 +208,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card m-3 shadow">
-            <img src="https://cdn.pixabay.com/photo/2016/10/29/19/16/madrid-1780819_1280.jpg" class="card-img-top" alt="Retiro Park">
+            <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/RETIROPARK.jpg" class="card-img-top" alt="Retiro Park">
             <div class="card-body">
               <h5 class="card-title">Retiro Park</h5>
               <p class="card-text">An oasis of peace in the middle of Madrid.</p>
@@ -193,6 +218,8 @@
       </div>
     </div>
   </div>
+  
+  
   
   <!-- Map Section -->
   <div class="container text-center my-5" id="map">
