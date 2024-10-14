@@ -53,16 +53,36 @@
       transform: translateX(30px);
     }
 
-    #about {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/BANNER.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+   #about {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/BANNER.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* Ensure the pseudo-element is positioned correctly */
+}
+
+/* Dark overlay effect */
+#about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% opacity for the dark effect */
+  z-index: 1;
+}
+
+#about .container {
+  position: relative;
+  z-index: 2; /* Make sure the text is above the dark overlay */
+  text-align: center;
+}
+
 
     /* Navbar Styles */
     .navbar {
