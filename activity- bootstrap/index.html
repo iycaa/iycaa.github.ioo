@@ -102,7 +102,7 @@
 </head>
 
 <body data-bs-theme="light" id="body">
-    <nav class="navbar navbar-expand-lg shadow fixed-top">
+    <nav class="navbar navbar-expand-lg  fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Explore Madrid</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -177,6 +177,29 @@
           </div>
         </div>
       </div>
+      <!-- Interactive Map Section -->
+  <div class="container text-center my-5" id="map">
+    <h2>Explore Madrid's Attractions</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24281.638111415654!2d-3.7037905595287175!3d40.41694753580314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42288b7c41d713%3A0x9fa569bbaa4a248a!2sPuerta%20del%20Sol!5e0!3m2!1sen!2sph!4v1697064323152!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+ <!-- User Content Section -->
+ <div class="container-fluid bg-light" id="user-content" style="padding: 50px 0;">
+    <div class="container">
+      <h2 class="text-center">Share Your Moments in Madrid!</h2>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name:</label>
+          <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Your Experience:</label>
+          <textarea class="form-control" id="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+
 
   <!-- Footer Section -->
   <div class="container-fluid bg-dark text-white" style="padding: 50px 0;">
