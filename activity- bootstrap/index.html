@@ -1,59 +1,12 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Explore Spain: Madrid</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    /* Toggle button switch design */
-    .toggle-btn {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 30px;
-    }
-
-    .toggle-btn input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 30px;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 2px;
-      bottom: 2px;
-      background-color: rgb(0, 0, 0);
-      transition: .4s;
-      border-radius: 50%;
-    }
-
-    input:checked + .slider {
-      background-color: #ffffff;
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(30px);
-    }
-
-    #about {
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explore Spain: Madrid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      #about {
         min-height: 100vh;
         display: flex;
         justify-content: center;
@@ -62,10 +15,9 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        position: relative; /* Ensure the pseudo-element is positioned correctly */
+        position: relative;
       }
-      
-      /* Dark overlay effect */
+
       #about::before {
         content: "";
         position: absolute;
@@ -73,292 +25,139 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0, 0, 0, 0.5); /* 50% opacity for the dark effect */
+        background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
       }
-      
+
       #about .container {
         position: relative;
-        z-index: 2; /* Make sure the text is above the dark overlay */
+        z-index: 2;
         text-align: center;
       }
-      
 
-    /* Navbar Styles */
-    .navbar {
-      background-color: rgba(255, 255, 255, 0.9);
-      transition: background-color 0.3s ease;
-      z-index: 10;
-    }
-
-    .navbar.scrolled {
-      background-color: rgba(255, 255, 255, 0.9);
-    }
-
-    /* Dark mode styles */
-    body[data-bs-theme="dark"] .navbar {
-      background-color: rgba(36, 36, 36, 0.9);
-    }
-
-    /* Dark mode scrolled navbar */
-    body[data-bs-theme="dark"] .navbar.scrolled {
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    /* Share Your Moment section styles */
-    .user-content-light {
-      background-color: #f8f9fa; /* Light background */
-      color: black; /* Dark text */
-    }
-
-    .user-content-dark {
-      background-color: #212529; /* Dark background */
-      color: white; /* Light text */
-    }
-    /* Make sure all cards are the same size */
-.card {
-    width: 100%; /* Adjust as needed for card width */
-    height: 350px; /* Fixed height for all cards */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  /* Force images to cover the top area and crop if needed */
-  .card-img-top {
-    width: 100%;
-    height: 250px; /* Fixed height for images */
-    object-fit: cover; /* Crop the image to fit the space */
-    object-position: center; /* Center the image in case of cropping */
-  }
-  
-  /* Ensure card body takes the rest of the space */
-  .card-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-     /* Agenda Section Styles */
-     .agenda-section {
+      .agenda-section {
         padding: 50px 0;
-        background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/madrid.jpg');
-        background-size: cover; /* Full screen background */
-        background-position: center; /* Center the background */
-        color: rgb(48, 47, 47); /* Default text color */
+        background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/madridd.jpg');
+        background-size: cover;
+        background-position: center;
+        color: rgb(255, 252, 252);
       }
-      .agenda-title {
-        text-align: left; }/* Align title to the left */
-        
-      /* Dark mode styles for agenda section */
-      body[data-bs-theme="dark"] .agenda-section {
-        background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
-        color: white; /* Text color in dark mode */
-      }
-  
-      body[data-bs-theme="dark"] .activity-card {
-        background-color: #333; /* Dark background for cards */
-        border: 1px solid #555; /* Dark border */
-      }
-  
-      body[data-bs-theme="dark"] .activity-title,
-      body[data-bs-theme="dark"] .activity-text {
-        color: #fff; /* Light text color */
-      }
-  
-      .activity-card {
-        background-color: #ffffff; /* White background for cards */
-        border: 1px solid #ccc; /* Light border */
-        border-radius: 10px; /* Rounded corners */
-        padding: 20px;
-        text-align: center;
-        transition: transform 0.2s; /* Smooth scaling */
-      }
-  
-      .activity-card:hover {
-        transform: scale(1.05); /* Slight zoom on hover */
-      }
-  
-      .activity-title {
-        font-size: 1.5rem; /* Title font size */
-        margin-bottom: 10px;
-      }
-  
-      .activity-text {
-        font-size: 1rem; /* Text font size */
-      }
-  </style>
-</head>
-
-<body data-bs-theme="light" id="body">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Explore Madrid </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-center w-100">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#gallery">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#agenda">Agenda</a>
-          </li>
-        </ul>
-        <label class="toggle-btn ms-2">
-          <input type="checkbox" id="btnColor" onclick="changeColorMode()">
-          <span class="slider"></span>
-        </label>
+    </style>
+  </head>
+  <body data-bs-theme="light" id="body">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow" style="position: fixed; top: 0; width: 100%; z-index: 1000">
+      <div class="container-fluid"><a class="navbar-brand " href="#">Explore Madrid</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto  mb-2 mb-lg-0 ">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
+          </ul><button class="btn btn-outline-secondary" id="btnColor" onclick="changeColorMode()">Dark Mode</button>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid " id="about">
+      <div class="container">
+        <h1 class="display-3 text-center fw-bold  text-white">Madrid, Spain</h1>
+        <p class="lead text-center text-white">The capital city with a thousand options</p>
       </div>
     </div>
-  </nav>
-
-  <!-- About Section -->
-  <div class="container-fluid " id="about">
-    <div class="container">
-      <h1 class="display-3 text-center  text-white">Madrid, Spain</h1>
-      <p class="lead text-center text-white">The capital city with a thousand options</p>
-    </div>
-  </div>
-
-  <!-- Gallery Section -->
-  <div class="container-fluid user-content-light" id="gallery" style="padding: 50px 0;">
-    <div class="container">
-      <h1 class="display-4 text-center">Beauty of Madrid</h1>
-      <div class="row justify-content-center my-5">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card m-3 shadow">
-            <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/PLAZAMAYOR.jpg" class="card-img-top" alt="Madrid Plaza Mayor">
-            <div class="card-body">
-              <h5 class="card-title">Plaza Mayor</h5>
-              <p class="card-text">One of Madrid's most iconic squares.</p>
+    <div class="container-fluid user-content-light" id="gallery" style="padding: 50px 0;">
+      <div class="container">
+        <h1 class="display-4 text-center">Beauty of Madrid</h1>
+        <div class="row justify-content-center my-5">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card m-3  shadow"><img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/PLAZAMAYOR.jpg" class="card-img-top" alt="Madrid Plaza Mayor">
+              <div class="card-body">
+                <h5 class="card-title">Plaza Mayor</h5>
+                <p class="card-text">One of Madrid's most iconic squares.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card m-3 shadow">
-            <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/ROYALPALACE.jpg" class="card-img-top" alt="Royal Palace of Madrid">
-            <div class="card-body">
-              <h5 class="card-title">Royal Palace</h5>
-              <p class="card-text">A symbol of Madrid's regal past.</p>
+          <div class="col-12  col-md-6 col-lg-4 ">
+            <div class="card m-3 shadow"><img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/ROYALPALACE.jpg" class="card-img-top" alt="Royal Palace of Madrid">
+              <div class="card-body">
+                <h5 class="card-title">Royal Palace</h5>
+                <p class="card-text">A symbol of Madrid's regal past.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card m-3 shadow">
-            <img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/RETIROPARK.jpg" class="card-img-top" alt="Retiro Park">
-            <div class="card-body">
-              <h5 class="card-title">Retiro Park</h5>
-              <p class="card-text">An oasis of peace in the middle of Madrid.</p>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card m-3 shadow"><img src="https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/RETIROPARK.jpg" class="card-img-top" alt="Retiro Park">
+              <div class="card-body">
+                <h5 class="card-title">Retiro Park</h5>
+                <p class="card-text">An oasis of peace in the middle of Madrid.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-<!-- Agenda Section -->
-<div class="container-fluid agenda-section" id="agenda">
-    <div class="container">
-      <h1 class="display-4 agenda-title"> Agenda idea</h1>
-      <div class="row my-5">
-        <div class="col-md-6">
-          <h5 class="activity-title">All the ideas available to you</h5>
-          
-        </div>
-        <div class="col-md-6">
-          <div id="agendaCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="activity-card m-3">
-                  <h5 class="activity-title">SHOPPING</h5>
-                  <p class="activity-text">Some of the best cities for shopping in Spain</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="activity-card m-3">
-                  <h5 class="activity-title">CALENDAR</h5>
-                  <p class="activity-text">Plans you cannot miss out on in Spain in 2024</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="activity-card m-3">
-                  <h5 class="activity-title">URBAN TOURISM</h5>
-                  <p class="activity-text">Unique cemeteriess in Spain: the art of beyond the grave</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="activity-card m-3">
-                  <h5 class="activity-title">CULTURE</h5>
-                  <p class="activity-text">Good time to visit the heritage cities</p>
-                </div>
-              </div>
+    <div class="container-fluid agenda-section" id="agenda">
+      <div class="container">
+        <h1 class="display-4 agenda-title fw-bold mt-5">Agenda Ideas</h1>
+        <div class="row my-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="activity-card m-3  ">
+              <h5 class="activity-title">SHOPPING</h5>
+              <p class="activity-text">Some of the best cities for shopping in Spain</p>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#agendaCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#agendaCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="activity-card m-3">
+              <h5 class="activity-title">CALENDAR</h5>
+              <p class="activity-text">Plans you cannot miss out on in Spain in 2024</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="activity-card m-3">
+              <h5 class="activity-title">URBAN TOURISM</h5>
+              <p class="activity-text">Unique cemeteries in Spain: the art of beyond the grave</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="activity-card m-3">
+              <h5 class="activity-title">CULTURE</h5>
+              <p class="activity-text">Good time to visit the heritage cities</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-
-
-
-  <!-- Footer Section -->
-  <div class="container-fluid bg-dark text-white" style="padding: 50px 0;">
-    <div class="container text-center">
-      <h3 class="display-6">Explore More of Spain</h3>
-      <p class="lead">Discover hidden gems and famous sights.</p>
-      <footer class="footer">
-        <p>&copy; 2024 Explore Spain. All Rights Reserved.</p>
-      </footer>
+    <div class="container-fluid bg-dark text-white" style="padding: 50px 0;">
+      <div class="container text-center">
+        <h3 class="display-6 ">Explore More of Spain</h3>
+        <p class="lead">Discover hidden gems and famous sights.</p>
+      </div>
     </div>
-  </div>
+    <script>
+      var colorMode = "light";
 
-  <script>
-    var colorMode = "light";
-
-    function changeColorMode() {
-      var body = document.getElementById("body");
-      var userContent = document.getElementById("gallery");
-
-      if (colorMode === "light") {
-        body.setAttribute("data-bs-theme", "dark");
-        userContent.classList.remove("user-content-light");
-        userContent.classList.add("user-content-dark");
-        colorMode = "dark";
-      } else {
-        body.setAttribute("data-bs-theme", "light");
-        userContent.classList.remove("user-content-dark");
-        userContent.classList.add("user-content-light");
-        colorMode = "light";
+      function changeColorMode() {
+        var body = document.getElementById("body");
+        var userContent = document.getElementById("gallery");
+        if (colorMode === "light") {
+          body.setAttribute("data-bs-theme", "dark");
+          userContent.classList.remove("user-content-light");
+          userContent.classList.add("user-content-dark");
+          colorMode = "dark";
+        } else {
+          body.setAttribute("data-bs-theme", "light");
+          userContent.classList.remove("user-content-dark");
+          userContent.classList.add("user-content-light");
+          colorMode = "light";
+        }
       }
-    }
-
-    // Change navbar color on scroll
-    window.addEventListener('scroll', function () {
-      var navbar = document.querySelector('.navbar');
-      if (window.scrollY > 0) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-</body>
+      window.addEventListener('scroll', function() {
+        var navbar = document.querySelector('.navbar');
+        if (window.scrollY > 0) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
