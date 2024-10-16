@@ -139,7 +139,7 @@
     flex-direction: column;
     justify-content: flex-end;
   }
-  /* Agenda Section Styles */
+     /* Agenda Section Styles */
      .agenda-section {
         padding: 50px 0;
         background-image: url('https://raw.githubusercontent.com/iycaa/iycaa.github.io/main/madrid.jpg');
@@ -149,7 +149,7 @@
       }
       .agenda-title {
         text-align: left; }/* Align title to the left */
-  
+        
       /* Dark mode styles for agenda section */
       body[data-bs-theme="dark"] .agenda-section {
         background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
@@ -165,7 +165,8 @@
       body[data-bs-theme="dark"] .activity-text {
         color: #fff; /* Light text color */
       }
-    .activity-card {
+  
+      .activity-card {
         background-color: #ffffff; /* White background for cards */
         border: 1px solid #ccc; /* Light border */
         border-radius: 10px; /* Rounded corners */
@@ -206,9 +207,12 @@
           <li class="nav-item">
             <a class="nav-link" href="#gallery">Gallery</a>
           </li>
-            <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="#agenda">Agenda</a>
-            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#user-content">Share Your Moment</a>
+          </li>
         </ul>
         <label class="toggle-btn ms-2">
           <input type="checkbox" id="btnColor" onclick="changeColorMode()">
@@ -227,7 +231,7 @@
   </div>
 
   <!-- Gallery Section -->
-  <div class="container-fluid" id="gallery" style="padding: 50px 0;">
+  <div class="container-fluid user-content-light" id="user-content" style="padding: 50px 0;">
     <div class="container">
       <h1 class="display-4 text-center">Beauty of Madrid</h1>
       <div class="row justify-content-center my-5">
@@ -267,27 +271,34 @@
       <h1 class="display-4 agenda-title"> Agenda idea</h1>
       <div class="row my-5">
         <div class="col-md-6">
-          <h5 class="activity-title">All the ideas available to you</h5> 
+          <h5 class="activity-title">All the ideas available to you</h5>
+          
         </div>
         <div class="col-md-6">
           <div id="agendaCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="activity-card m-3">
-                  <h5 class="activity-title">Morning Walk in Retiro Park</h5>
-                  <p class="activity-text">Enjoy the fresh air and beautiful landscapes.</p>
+                  <h5 class="activity-title">SHOPPING</h5>
+                  <p class="activity-text">Some of the best cities for shopping in Spain</p>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="activity-card m-3">
-                  <h5 class="activity-title">Visit to the Prado Museum</h5>
-                  <p class="activity-text">Explore world-famous artworks.</p>
+                  <h5 class="activity-title">CALENDAR</h5>
+                  <p class="activity-text">Plans you cannot miss out on in Spain in 2024</p>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="activity-card m-3">
-                  <h5 class="activity-title">Dinner at Plaza Mayor</h5>
-                  <p class="activity-text">Experience the vibrant atmosphere and delicious food.</p>
+                  <h5 class="activity-title">URBAN TOURISM</h5>
+                  <p class="activity-text">Unique cemeteriess in Spain: the art of beyond the grave</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="activity-card m-3">
+                  <h5 class="activity-title">CULTURE</h5>
+                  <p class="activity-text">Good time to visit the heritage cities</p>
                 </div>
               </div>
             </div>
@@ -305,7 +316,9 @@
     </div>
   </div>
   
- 
+
+
+
   <!-- Footer Section -->
   <div class="container-fluid bg-dark text-white" style="padding: 50px 0;">
     <div class="container text-center">
@@ -319,6 +332,7 @@
 
   <script>
     var colorMode = "light";
+
     function changeColorMode() {
       var body = document.getElementById("body");
       var userContent = document.getElementById("user-content");
